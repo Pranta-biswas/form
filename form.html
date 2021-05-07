@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <!-- resources -->
+    <link rel="stylesheet" href="resources/style.css" />
+  </head>
+  <body>
+    <div id="form_main_section">
+      <div class="form_section">
+        <h1>ACCOUNT LOGIN</h1>
+        <form action="mailto:prantabiswas11702@gmail.com" method="POST">
+          <div class="first_name">
+            <p class="pag">USERNAME</p>
+            <input
+              id="count"
+              class="input"
+              onkeyup="showcount()"
+              type="text"
+              required
+            />
+            <p class="character_pa">character : <span id="character"></span></p>
+          </div>
+
+          <div class="password_section">
+            <p class="pag">PASSWORD</p>
+            <input
+              class="input"
+              id="totalcount"
+              onkeyup="passwordcount()"
+              type="password"
+            />
+            <p class="character_pa">
+              password character : <span id="p_character"></span>
+            </p>
+          </div>
+
+          <div class="forget_section">
+            <div class="remember">
+              <input class="remember_input" type="" />
+              <p>Remember Me</p>
+            </div>
+            <div class="forgot">
+              <a href="#">fotgot password?</a>
+            </div>
+          </div>
+
+          <div class="log_in">
+            <button type="submit">log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // first section start
+      const countLetter = document.getElementById("count");
+      const character = document.getElementById("character");
+      function showcount() {
+        const length = countLetter.value.length;
+        character.innerHTML = `${length}`;
+      }
+      showcount();
+      //first section ends
+      //password section start
+      const password_l = document.getElementById("totalcount");
+      const passw_character = document.getElementById("p_character");
+      function passwordcount() {
+        const passlength = password_l.value.length;
+        p_character.innerHTML = `${passlength}`;
+      }
+      passwordcount();
+      // password section ends
+    </script>
+  </body>
+</html>
